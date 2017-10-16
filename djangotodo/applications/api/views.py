@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from . import models, serializers
+from applications.api import models, serializers
 
 
 class TodoListViewSet(viewsets.ModelViewSet):
