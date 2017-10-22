@@ -4,6 +4,7 @@
 
 # Virtual environments
 .venv/
+venv/
 .virtualenvs/
 
 # OS specific files
