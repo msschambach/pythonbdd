@@ -29,11 +29,16 @@ def step_impl(context):
       u'description "A list of homework tasks to do" should be created')
 def step_impl(context):
 
-    url = '/api/lists/{list_id}'.format(list_id=context.list_id)
+    url = '/api/lists/{list_id}/'.format(list_id=context.list_id)
     response = api_client.get(url)
-    print("url:", url)
     assert response.status_code == 200
-    response_dict = json.loads(response.content.decode('utf-8'))
+
+    try:
+        response_dict = json.loads(response.content)
+    except ValueError as e:
+        response_dict = []
+        print(e)
+        print("content: " + response.content)
 
     assert response_dict.get('name') == 'Homework to do'
     assert response_dict.get('description') == 'A list of homework tasks to do'
@@ -56,9 +61,15 @@ def step_impl(context):
       u'description "A list of errands to run" should be created')
 def step_impl(context):
 
-    url = '/api/lists/{list_id}'.format(list_id=context.list_id)
+    url = '/api/lists/{list_id}/'.format(list_id=context.list_id)
     response = api_client.get(url)
-    response_dict = json.loads(response.content.decode('utf-8'))
+
+    try:
+        response_dict = json.loads(response.content)
+    except ValueError as e:
+        response_dict = []
+        print(e)
+        print("content: " + response.content)
 
     assert response_dict.get('name') == 'Errands to run'
     assert response_dict.get('description') == 'A list of errands to run'
