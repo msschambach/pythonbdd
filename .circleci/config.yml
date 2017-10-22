@@ -32,7 +32,7 @@ jobs:
           command: |
             python3 -m venv djangotodo/.venv
             . djangotodo/.venv/bin/activate
-            pip install -r requirements.txt
+            pip install -r djangotodo/requirements.txt
 
       - save_cache:
           paths:
@@ -44,12 +44,14 @@ jobs:
           name: run tests
           command: |
             . djangotodo/.venv/bin/activate
+            cd djangotodo
             python manage.py test
 
       - run:
           name: run feature tests
           command: |
             . djangotodo/.venv/bin/activate
+            cd djangotodo
             python manage.py behave
 
       - store_artifacts:
