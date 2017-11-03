@@ -45,14 +45,14 @@ jobs:
           command: |
             . djangotodo/.venv/bin/activate
             cd djangotodo
-            python manage.py test
+            python manage.py test --settings=configuration.settings.ci
 
       - run:
           name: run feature tests
           command: |
             . djangotodo/.venv/bin/activate
             cd djangotodo
-            python manage.py behave
+            python manage.py behave --settings=configuration.settings.ci
 
       - store_artifacts:
           path: test-reports
