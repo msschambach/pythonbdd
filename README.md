@@ -70,7 +70,7 @@ python manage.py behave --settings=configuration.settings.test
 ```
 again.
 
-For reference have a look at `pythonbdd/djangotodo/features/api_create_todolist.feature`  and `pythonbdd/djangotodo/features/steps/api_create_todolist.py`
+For reference have a look at [pythonbdd/djangotodo/features/api_create_todolist.feature](https://github.com/msschambach/pythonbdd/blob/master/djangotodo/features/api_create_todolist.feature)  and [pythonbdd/djangotodo/features/steps/api_create_todolist.py](https://github.com/msschambach/pythonbdd/blob/master/djangotodo/features/steps/api_create_todolist.py)
 
 NB: If you create a gherkin file called `example.feature`, the steps file must be called `example.py`.
 
