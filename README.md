@@ -113,3 +113,4 @@ python manage.py behave --settings=configuration.settings.test
 
 
 NB: Tested with python 2.7.10 and python 3.6.1
+Some additional comment.
